@@ -1,0 +1,23 @@
+div.skill-container {
+  width: 80%;
+  padding: 5% 10%;
+
+  .outer-container {
+    background-color: grey;
+    border: 3px solid black;
+    height: 80px;
+    width: 100%;
+  
+    .inner-container {
+      background-color: white;
+      height: 100%;
+      transition: width 2s;
+      transition-timing-function: ease-out;
+    }
+  }
+
+}
+
+div.loading div.outer-container div.inner-container {
+  width: 0% !important;
+}
