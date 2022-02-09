@@ -3,8 +3,7 @@ import { useDrag } from 'react-dnd';
 
 import { DropTypes } from '../../types';
 import { DragNavProps } from '../../types';
-
-require('../../style/dragNav.less');
+import '../../style/dragNav.less';
 
 export const DragNav = (props: DragNavProps) => {
     const [things, dragRef] = useDrag({

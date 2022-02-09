@@ -13,8 +13,6 @@ export const SkillDummy = (props: SkillProps) => {
             const isElementInView = isInViewPort(selector.current.getBoundingClientRect());
             if (isElementInView && inView === NOT_IN_VIEW_CLASS) {
                 setView('');
-            } else if(!isElementInView && inView === '') {
-                setView(NOT_IN_VIEW_CLASS);
             }
         }
     }
@@ -26,13 +24,8 @@ export const SkillDummy = (props: SkillProps) => {
         )
     }
 
-    React.useEffect(() => {
-        window.addEventListener('scroll', handleScroll.bind(this));
-        handleScroll();
-        return () => {
-            window.removeEventListener('scroll', handleScroll)
-        }
-    })
+    window.addEventListener('scroll', handleScroll.bind(this));
+    setTimeout(handleScroll);
 
     return (
         <div ref={selector}>

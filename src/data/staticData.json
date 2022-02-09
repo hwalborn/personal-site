@@ -10,6 +10,43 @@
                     {
                         "name": "JavaScript",
                         "value": 95
+                    },
+                    {
+                        "name": "HTML",
+                        "value": 90
+                    },
+                    {
+                        "name": "CSS",
+                        "value": 90
+                    },
+                    {
+                        "name": "C#",
+                        "value": 75
+                    },
+                    {
+                        "name": "SQL",
+                        "value": 70
+                    }
+                ]
+            },
+            {
+                "title": "Frameworks",
+                "skills": [
+                    {
+                        "name": "React",
+                        "value": 90
+                    },
+                    {
+                        "name": "jQuery",
+                        "value": 90
+                    },
+                    {
+                        "name": ".NET",
+                        "value": 75
+                    },
+                    {
+                        "name": ".LESS",
+                        "value": 70
                     }
                 ]
             }

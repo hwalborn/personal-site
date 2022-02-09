@@ -5,8 +5,7 @@ import { HashRouter, Link } from 'react-router-dom'
 
 import { App } from './components/App';
 import { Skills } from './components/Skills';
-
-require('./style/index.less');
+import './style/index.less';
 
 ReactDOM.render(
     <HashRouter>
