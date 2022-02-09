@@ -1,17 +1,12 @@
 import * as React from 'react';
-import {useDrag} from 'react-dnd';
+import { useDrag } from 'react-dnd';
 
-import { DropTypes } from '../../env/dropTypes';
+import { DropTypes } from '../../types';
+import { DragNavProps } from '../../types';
 
 require('../../style/dragNav.less');
 
-type Props = {
-    className: string;
-    onDragBegin: () => void;
-    onDragEnd: () => void;
-}
-
-export const DragNav = (props: Props) => {
+export const DragNav = (props: DragNavProps) => {
     const [things, dragRef] = useDrag({
         item: { type: DropTypes.NAVIGATOR },
         collect: (monitor) => ({

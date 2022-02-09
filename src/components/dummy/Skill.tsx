@@ -1,12 +1,8 @@
 import * as React from 'react';
 
-type Props = {
-  skill: string;
-  level: string;
-  index: number;
-}
+import { SkillProps } from '../../types';
 
-export const SkillsDummy = (props: Props) => {
+export const SkillDummy = (props: SkillProps) => {
 
     const NOT_IN_VIEW_CLASS = 'not-in-view';
     const [inView, setView] = React.useState(NOT_IN_VIEW_CLASS);
@@ -39,7 +35,7 @@ export const SkillsDummy = (props: Props) => {
     })
 
     return (
-        <div ref={selector} key={props.index}>
+        <div ref={selector}>
             <span>{props.skill}</span>
             <div className="outer-container"><div style={{width: `${props.level}%`}} className={`inner-container ${inView}`}></div></div>
         </div>

@@ -5,17 +5,13 @@ import { Document, pdfjs } from 'react-pdf';
 
 import { DropNav } from './dummy/DropNav';
 import { DragNav } from './dummy/DragNav';
-import { Navigation } from '../env/dropTypes';
+import { Navigation } from '../types/dropTypes';
 import dataAccess from '../data/dataAccess';
+import { AppState, HomepageText} from '../types';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
-type State = {
-    summary: string;
-    isDragging: boolean;
-}
-
-export class App extends React.Component<any, State> {
+export class App extends React.Component<any, AppState> {
     constructor(props:  Readonly<any>) {
         super(props);
         this.state = {
@@ -27,8 +23,8 @@ export class App extends React.Component<any, State> {
     }
 
     async componentWillMount() {
-        var response: any = await dataAccess.googleSheets('homepage');
-        this.setState({summary: response.Summary});
+        const data = dataAccess.staticData<HomepageText>('homepage');
+        this.setState({summary: data.Summary});
     }
 
     // hacky DOM manipulation for hiding the home link when on the homepage

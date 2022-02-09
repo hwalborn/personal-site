@@ -1,0 +1,18 @@
+{
+    "homepage": {
+        "Summary": "hi my name is Holt and this is some text"
+    },
+    "skills": {
+        "list": [
+            {
+                "title": "Languges",
+                "skills": [
+                    {
+                        "name": "JavaScript",
+                        "value": 95
+                    }
+                ]
+            }
+        ]
+    }
+}
