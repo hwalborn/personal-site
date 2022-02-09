@@ -18,3 +18,8 @@ export type SkillProps = {
 export type SkillsProps = {
     test?: string;
 }
+
+export type AboutContainerProps = {
+    title: string;
+    text: string;
+}

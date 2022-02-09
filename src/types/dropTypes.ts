@@ -4,5 +4,6 @@ export enum DropTypes {
 
 export const Navigation: any = {
     Skills: null,
+    About_Me: null,
     Tech_Resume: '../pdfs/BeachHouse.pdf'
 }

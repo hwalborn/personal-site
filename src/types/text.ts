@@ -7,3 +7,7 @@ export type Homepage = {
 export type Skills = {
     list: Array<SkillsType>;
 }
+
+export type About = {
+    list: Array<{title: string, text: string}>;
+}

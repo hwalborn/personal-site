@@ -1,15 +1,28 @@
 import * as React from 'react';
-import { DndProvider } from 'react-dnd'
-import { HTML5Backend } from 'react-dnd-html5-backend'
-import { Document, pdfjs } from 'react-pdf';
+import { DndProvider } from 'react-dnd';
+import { TouchBackend } from 'react-dnd-touch-backend';
+import { pdfjs } from 'react-pdf';
 
 import { DropNav } from './dummy/DropNav';
 import { DragNav } from './dummy/DragNav';
 import { Navigation } from '../types/dropTypes';
 import dataAccess from '../data/dataAccess';
 import { AppState, HomepageText} from '../types';
+import { usePreview } from 'react-dnd-preview';
+ 
+const DragBall = () => {
+    const {display, style} = usePreview();
+    if (!display) {
+        return null;
+    }
+    return <div className="drag-ball" style={style}>NAV</div>;
+};
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+
+const providerOptions = {
+    enableMouseEvents: true
+};
 
 export class App extends React.Component<any, AppState> {
     constructor(props:  Readonly<any>) {
@@ -66,10 +79,11 @@ export class App extends React.Component<any, AppState> {
             <div>
                 <h1>Holt Walborn</h1>
                 <p>{this.state.summary}</p>
-                <DndProvider backend={HTML5Backend}>
+                <DndProvider backend={TouchBackend} options={providerOptions}>
                     <DragNav className={this.state.isDragging ? '' : 'drag-nav'}
                              onDragBegin={this.startDrag}
                              onDragEnd={this.endDrag}/>
+                    <DragBall />
                     <div id="drop-nav-container">
                         {dropNavs}
                     </div>

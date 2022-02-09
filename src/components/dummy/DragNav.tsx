@@ -6,23 +6,23 @@ import { DragNavProps } from '../../types';
 import '../../style/dragNav.less';
 
 export const DragNav = (props: DragNavProps) => {
-    const [things, dragRef] = useDrag({
+    const [style, dragRef] = useDrag({
         item: { type: DropTypes.NAVIGATOR },
         collect: (monitor) => ({
           opacity: monitor.isDragging() ? 0.5 : 1,
           animationPlayState: monitor.isDragging() ? 'paused' : '',
-          backgroundColor: monitor.isDragging ? 'black' : ''
+          backgroundColor: monitor.isDragging() ? 'black' : ''
         }),
-        begin: (monitor) => {
+        begin: () => {
             props.onDragBegin();
         },
-        end: (draggedItem) => {
+        end: () => {
             props.onDragEnd()
         }
       })
     return (
     <div id="nav-container">
-        <div ref={dragRef} className={props.className} style={things}>
+        <div ref={dragRef} className={props.className} style={style}>
             <p>Nav</p>
         </div>
     </div>
