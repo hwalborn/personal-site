@@ -56,7 +56,11 @@
         "list": [
             {
                 "title": "Personal",
-                "text": "This is some personal info about me"
+                "text": "Hi! My name is Holt and I'm a retired professional dancer/software engineer based out of NYC. I've been living on the east coast since 2010 and had my hands in a number of professions. From dancing, to Trader Joes, to teaching, to engineering, I have developed a set of unique cross-domain skills that can be applied in any situation. Outside of business, I enjoy running, hiking, beer, and many other things. You can find me on Jones Beach, riding the East River Ferry, walking through the city, or just grabbing a beer in my neighborhood. Welcome to my website and feel free to reach out to if you want to connect."
+            },
+            {
+                "title": "Professional - Engineering",
+                "text": "I've worked in Software since Summer 2017. During my time engineering, I've written full stack code to squash countless bugs, illuminate black box areas, migrate legacy to modern frameworks, and so much more."
             }
         ]
     }

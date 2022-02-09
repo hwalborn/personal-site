@@ -29,7 +29,7 @@ export const SkillDummy = (props: SkillProps) => {
 
     return (
         <div ref={selector}>
-            <span>{props.skill}</span>
+            <span>{props.skill} {props.level}%</span>
             <div className="outer-container"><div style={{width: `${props.level}%`}} className={`inner-container ${inView}`}></div></div>
         </div>
     )

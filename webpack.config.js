@@ -1,10 +1,9 @@
 const path = require('path');
-// const ExtractTextPlugin = require("extract-text-webpack-plugin");
-// const huh = new ExtractTextPlugin();
+const isDev = process.env.NODE_ENV === 'dev' 
 
 module.exports = {
-    mode: "development",
-    devtool: "source-map",
+    mode: isDev ? "development" : 'production',
+    devtool: isDev ? "source-map" : '',
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".css", ".less"]
     },
@@ -41,14 +40,5 @@ module.exports = {
         compress: true,
         index: 'index.html',
         open: true
-    },
-
-    // When importing a module whose path matches one of the following, just
-    // assume a corresponding global variable exists and use that instead.
-    // This is important because it allows us to avoid bundling all of our
-    // dependencies, which allows browsers to cache those libraries between builds.
-    externals: {
-        "react": "React",
-        "react-dom": "ReactDOM"
     }
 }

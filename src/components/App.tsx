@@ -15,7 +15,7 @@ const DragBall = () => {
     if (!display) {
         return null;
     }
-    return <div className="drag-ball" style={style}>NAV</div>;
+    return <div className="drag-ball" style={style}>Nav</div>;
 };
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
