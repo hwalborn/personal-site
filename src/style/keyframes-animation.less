@@ -1,0 +1,43 @@
+@import 'colors.less';
+
+.keyframes() {
+    @-moz-keyframes dragNavColor {
+        0% {
+          background-color: @pastel-red;
+        }
+        50% {
+          background-color: @light-blue;
+        }
+        100% {
+          background-color: @pastel-red;
+        }
+    }
+    @-webkit-keyframes dragNavColor {
+        0% {
+          background-color: @pastel-red;
+        }
+        50% {
+          background-color: @light-blue;
+        }
+        100% {
+          background-color: @pastel-red;
+        }
+    }
+    @keyframes dragNavColor {
+        0% {
+          background-color: @pastel-red;
+        }
+        50% {
+          background-color: @light-blue;
+        }
+        100% {
+          background-color: @pastel-red;
+        }
+    }
+}
+
+.animation() {
+    -webkit-animation: dragNavColor 2s ease-in-out infinite alternate;
+    -moz-animation: dragNavColor 2s ease-in-out infinite alternate;
+    animation: dragNavColor 2s ease-in-out infinite alternate;
+}

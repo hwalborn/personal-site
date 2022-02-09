@@ -1,0 +1,26 @@
+@import 'keyframes-animation.less';
+
+#nav-container {
+    div {
+        height: 50px;
+        width: 50px;
+        background-color: transparent;
+        color: white;
+        margin: auto;
+        border-radius: 100px;
+        text-align: center;
+        padding-top: 1px;
+
+        &.drag-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .keyframes();
+            .animation();
+
+            p {
+                margin: 0;
+            }
+        }
+    }
+}

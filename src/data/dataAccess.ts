@@ -2,7 +2,7 @@ import key from './dataApiKey';
 import { DataAccess } from '../classes/dataAccess';
 
 export default {
-  googleSheets: (sheet: string) => {
+  googleSheets: (sheet: string, customHandle?: (data: DataAccess, resolve: (value?: unknown) => void) => void): Promise<unknown> => {
     // lets do this async, build a new promise
     return new Promise((resolve, reject) => {
       // use the api key and the sheet passed in
@@ -11,17 +11,21 @@ export default {
         // make some json, this also happens async
         resp.json()
         .then((data: DataAccess) => {
-          // build our object to return
-          const valueObjects = data.valueRanges.reduce((acc, vr) => {
-            return vr.values.reduce((result: any, data) => {
-              if (data.length) {
-                result[data[0]] = data.slice(1)
-                return result;
-              }
-            }, acc)
-          }, {})
-          // resolve with some awesome data from google sheets
-          resolve(valueObjects)
+            if (customHandle) {
+                customHandle(data, resolve);
+            } else {
+                // build our object to return
+                const valueObjects = data.valueRanges.reduce((acc, vr) => {
+                  return vr.values.reduce((result: any, data) => {
+                    if (data.length) {
+                      result[data[0]] = data.slice(1)
+                      return result;
+                    }
+                  }, acc)
+                }, {})
+                // resolve with some awesome data from google sheets
+                resolve(valueObjects)
+            }
         })
       })
     })
