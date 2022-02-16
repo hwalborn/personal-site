@@ -1,18 +1,25 @@
 @import 'keyframes-animation.less';
+@import 'colors.less';
+@import 'navigation.less';
 
-div.drop-nav {
-    transition: background-color 0.5s ease;
-    height: 100px;
-    width: 100px;
-    border-radius: 5px;
-    border: 1px solid black;
-    box-shadow: 5px 5px 2px black;
+div.outer-drop-container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    width: 33%;
+    margin: 25px 0;
 
-    &.dragging {
-        .keyframes();
-        .animation();
+    div.drop-nav {
+        border: 1px solid @darklava;
+        box-shadow: 5px 5px 2px @darklava;
+        .nav-container(5px);
+    
+        &.dragging {
+            .keyframes();
+            .animation();
+        }
+    }
+
+    @media screen and (max-width: 1000px) {
+        width: 50%;
     }
 }

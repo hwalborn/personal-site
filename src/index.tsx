@@ -10,12 +10,10 @@ import './style/index.less';
 
 ReactDOM.render(
     <HashRouter>
-        <div className='test'>
-            <Link id="back-home" to='/'>Home</Link>
-            <Route exact path='/' component={ App } />
-            <Route exact path='/skills' component={ Skills } />
-            <Route exact path='/about_me' component={ About } />
-        </div>
+        <Link id="back-home" to='/'><h2>{'< Back'}</h2></Link>
+        <Route exact path='/' component={ App } />
+        <Route exact path='/skills' component={ Skills } />
+        <Route exact path='/about_me' component={ About } />
     </HashRouter>,
     document.getElementById('app')
 )

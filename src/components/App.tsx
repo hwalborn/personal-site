@@ -78,7 +78,6 @@ export class App extends React.Component<any, AppState> {
         return (
             <div>
                 <h1>Holt Walborn</h1>
-                <p>{this.state.summary}</p>
                 <DndProvider backend={TouchBackend} options={providerOptions}>
                     <DragNav className={this.state.isDragging ? '' : 'drag-nav'}
                              onDragBegin={this.startDrag}

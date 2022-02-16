@@ -13,5 +13,9 @@ export const DropNav = (props: DropNavProps) => {
             backgroundColor: monitor.isOver() ? 'grey' : 'transparent'
         })
     });
-    return <div ref={drop} className={props.className} style={styling}>{props.navigateTo}</div>
+    return (
+        <div className="outer-drop-container">
+            <div ref={drop} className={props.className} style={styling}>{props.navigateTo}</div>
+        </div>
+    );
 }

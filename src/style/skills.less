@@ -1,24 +1,36 @@
 div.skill-container {
-  width: 80%;
-  padding: 5% 10%;
+    width: 80%;
+    padding: 5% 10%;
 
-  .outer-container {
+    .outer-container {
     background-color: grey;
     border: 1px solid black;
     height: 80px;
     width: 100%;
     box-shadow: 2px 2px 2px black;
     margin: 10px 0;
-  
-    .inner-container {
-        background-color: white;
-        height: 100%;
-        transition: width 1s;
-        transition-timing-function: ease-out;
 
-        &.not-in-view {
-            width: 0% !important;
+        .inner-container {
+            background-color: white;
+            height: 100%;
+            transition: width 1s;
+            transition-timing-function: ease-out;
+
+            &.not-in-view {
+                width: 0% !important;
+            }
         }
     }
-  }
+
+
+
+    @media screen and (max-width: 1000px) {
+        h3 {
+            font-size: 2.5em;
+        }
+
+        span {
+            font-size: 2em;
+        }
+    }
 }

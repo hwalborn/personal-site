@@ -1,14 +1,24 @@
+@import 'colors.less';
+@import 'navigation.less';
+
 body {
 font-family: 'Play', sans-serif;
+color: @darklava;
+
+    #back-home {
+        text-decoration: none;
+        color: @feldgrau;
+    }
 
     #drop-nav-container {
         margin-top: 15%;
         display: flex;
         justify-content: space-around;
+        flex-wrap: wrap;
     }
 
-    h1{
-        color: pink;
+    h1 {
+        color: @greensheen;
     }
 
     .home-hide {
@@ -16,17 +26,17 @@ font-family: 'Play', sans-serif;
     }
 
     .drag-ball {
-        height: 100px;
-        width: 100px;
+        .nav-container(200px);
         background-color: transparent;
         color: white;
         margin: auto;
-        border-radius: 100px;
-        text-align: center;
         padding-top: 1px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         background-color: black;
+    }
+
+    @media screen and (max-width: 1000px) {
+        #back-home, h1 {
+            font-size: 2.5em;
+        }
     }
 }
